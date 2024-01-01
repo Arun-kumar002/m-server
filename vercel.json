@@ -1,0 +1,21 @@
+{
+   "version": 2,
+   "name": "connect",
+   "builds": [
+      {
+         "src": "index.js",
+         "use": "@vercel/node"
+      }
+   ],
+   "routes": [
+      {
+         "handle": "filesystem",
+         "src": "/images/(.*)",
+         "destination": "/images/$1"
+      },
+      {
+         "src": "/(.*)",
+         "dest": "/index.js"
+      }
+   ]
+}
